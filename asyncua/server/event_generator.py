@@ -88,7 +88,7 @@ class EventGenerator:
 
                 await node.set_event_notifier([ua.EventNotifier.SubscribeToEvents])
         else:
-            if emitting_node != ua.ObjectIds.Server:
+            if emitting_node.nodeid.Identifier != ua.ObjectIds.Server:
                 ref = ua.AddReferencesItem()
                 ref.IsForward = True
                 ref.ReferenceTypeId = ua.NodeId(ua.ObjectIds.HasNotifier)
